@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+   <style>
+    body { background-color:whitesmoke
+         }
+
+    h1 {margin-top: 40px;
+		color:aqua; 
+		text-align:left;
+		font-size: 50px;
+        font-family: 'Roboto', sans-serif;
+        padding:2px;
+       }
+
+    h2 {margin-top: 50px;
+        font-size: 40px;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        text-align:left;
+        color: #fdfdfe;
+        text-shadow: 0px 0px 5px red, 0px 0px 10px red, 0px 0px 10px #b393d3,
+        0px 0px 20px #b393d3;
+        }
+
+    h3 {margin-top: 50px;
+			color: yellowgreen; 
+			text-align:left;
+			font-size: 30px;
+            font-family: 'Roboto', sans-serif;
+            padding:2px
+        }
+
+    .nest1{font-weight: bold;
+           font-size: large;
+           text-align: left;
+           }
+
+    .nest2{font-weight: normal;
+           font-size: small;
+           text-align: left;
+           }
+
+    .nest3{font-weight: bold;
+           font-size: medium;
+           text-align: left;
+           }
+
+    .nest4{font-weight: bold;
+           font-size: large;
+           text-align: left;
+           background-color: lightskyblue;
+           }
+
+    tr:nth-child(odd){background-color: #D6EEEE;
+                      color:rgb(219, 93, 15);
+                      font-style: italic;
+                    }
+
+    .tr1{color:darkolivegreen;
+        font-style:initial;
+        }
+
+    #item1 {font-size: 35px;
+           color:rgb(213, 139, 42);
+           text-align: center;
+           font-style: normal;
+           font-weight: bold;
+           background-color:green;
+           }
+
+    .item2 {font-size: 20px;
+           color:black;
+           text-align: left;
+           font-style: normal;
+           font-weight:lighter;
+           font-family: 'Times New Roman', Times, serif;
+           }
+
+    .item3 {font-size: 20px;
+           color:black;
+           text-align: left;
+           font-style: italic;
+           font-family:'Times New Roman', Times, serif;
+    }
+/* This for table 2 */
+    .grid-container {display: grid;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+                    column-gap:33px;
+                    row-gap:28px;
+                    align-content:space-evenly;
+                    }
+    .source{font-size:medium;
+            font-style: italic;
+            color:blue;
+        }
+/* This is for javav highlight */    
+    .selectedElement{
+            border-style: solid;
+            padding:6px;
+            border-color:green;
+            box-shadow: 1px 1px 2px black, 0 0 15px red, 0 0 5px rgb(139, 63, 0);
+        }
+        
+    .unSelectedElement{
+            border-style: solid;
+            padding:6px;
+            border-color:pink;
+        }
+    .task4display{color: orange;
+                  font-size: 33px;
+                  font-style:italic
+                 }
+
+    .task5display{color:darksalmon;
+                 font-size: 33px;
+                 font-style: oblique;
+                 }
+
+    .imagecredit{font-size: medium;
+                 font-style:italic
+                }
+</style>
+<script>
+    function task4display(selection){
+    dogBtn = document.getElementById("t4dog");
+    frogBtn = document.getElementById("t4frog");
+    catBtn = document.getElementById("t4cat");
+    
+    var disptxtfield = document.getElementById("t4display")
+    var disptxt=document.getElementById("t5display")
+    var dispimg=document.getElementById("t6display")
+
+    if (selection == 'dog'){
+                disptxtfield.value = "User clicks Dog";
+                disptxt.innerHTML = "<span>Dog is clicked</span>";
+                dispimg.src ="dog.jpg";
+                toggle_border(dogBtn,frogBtn);
+                toggle_border(dogBtn,catBtn);
+            }
+            else if (selection =='frog'){
+                disptxtfield.value = "User clicks Frog";
+                disptxt.innerHTML = "<span>Fog is clicked</span>";
+                dispimg.src ="frog.jpg"
+                toggle_border(frogBtn,dogBtn);
+                toggle_border(frogBtn,catBtn);
+            }
+            else if (selection =='cat'){
+                disptxtfield.value = "User clicks Cat ";
+                disptxt.innerHTML = "<span>Cat is clicked</span>";
+                dispimg.src ="cat.jpg";
+                toggle_border(catBtn,dogBtn);
+                toggle_border(catBtn,frogBtn);
+            }
+    }
+
+    function toggle_border(selection, counterpart){
+           selection.classList.add("selectedElement")
+           selection.classList.remove("unSelectedElement")
+           counterpart.classList.add("unSelectedElement")
+           counterpart.classList.remove("selectedElement")}
+
+</script>
+</head>
+<!-- Task 1 -->
+<boday>
+    <h1 class="h1">3228770 Chenlu Liu</h1>
+    <h2 class="h2">COMP804: Web Security</h2>
+    <h3 class="h3">Assignment 1, due at the end of week 5</h3>
+    <br>
+    <br>
+<!-- Task 2 -->
+<table style="border-style: ridge;">
+    <tr>
+      <th class="nest4">Activity</th>
+      <th class="nest4">Date</th>
+    </tr>
+    <tr class="tr1">
+    <td>First day to enrol for re-enrolling (continuing students)</td>
+    <td>20 Nov 2023</td>
+    <tr>
+    <td>Orientation</td>
+    <td>16 Jul 2024</td>
+    </tr> 
+    <tr class="tr1">
+        <td>Lectures Commence (weeks 1-10)</td>
+        <td>22 Jul-27 Sep 2024</td>
+    </tr>
+    <tr>
+        <td>Last day to enrol / add subjects yourself</td>
+        <td>02 Aug 2024</td>
+    </tr>
+    <tr class="tr1">
+        <td>Last day to enrol / add subjects with Head of Students approval</td>
+        <td> 09 Aug 2024</td>
+    </tr>
+
+    <tr>
+        <td>
+            <table>
+            <tr>
+            <th class="nest1"> Census Date </th>
+            </tr>
+            <tr>
+            <th style="list-style-type:square;">
+                <li class="nest2" >Fee Due</li>
+                <li class="nest2" >Last day to withdraw from subject/s without paying for them</li>
+                <li class="nest2">HECS / FEE HELP debt reporting date</li>
+                <li class="nest2">Last day to change HECS / FEE HELP billing option</li>
+            </th>
+            </tr>
+            <bar><bar>
+            <td class="nest3"><a href="https://uowedu.service-now.com/kb?id=kb_article_view&sysparm_article=KB0012659">Learn more about Censsu date ></a></td>
+            <bar>
+            </table>
+        </td>
+        <td>31 Aug 2024</td>
+    </tr>
+    <tr class="tr1">
+        <td>Student Services and Amenities Fees Due</td>
+        <td>01 Sep 2024</td>
+     </tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- Task 3 -->
+<div class="grid-container">
+  <div id="item1">Name</div>
+  <div id="item1">Web Attacks</div>
+  <!-- 1st attack -->
+  <div class="item2">1. Cross-Site Scripting <br><br><img src="1.Cross-site.png" width="240" height=auto><img>
+    <br><br>
+    <a href="https://www.cloudflare.com/en-au/learning/security/threats/cross-site-scripting/" class="source">Source:https://www.cloudflare.com</a>
+    </div>
+  <div class="item3">Cross-site scripting (XSS) attacks trick a browser into delivering malicious client-side scripts to the victim's browser, which will automatically execute it once received.
+                  This malware can:Exfiltrate data,Install malware,Redirect the user to a spoofed site.
+                  Preventing XSS attacks is as easy as sanitizing your data inputs. 
+                  Consider denying special characters or symbols to avoid the injection of code. 
+                  Unchecked, cross-site scripting attacks can lead to session hijacking, form action hijacking, and server-side request forgery attacks.<br><br>
+  <a href="http://=www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself" class="source">Source:http://www.tripwire.com</a>
+  </div>
+  <!-- 2nd attack -->
+  <div class="item2">2. SQL Injection Attacks<br><br><img src="2.sql injection.png" width="240" height=auto><img>
+    <br><br>
+    <a href="https://portswigger.net/web-security/sql-injection" class="source">Source:https://portswigger.net</a>
+    </div>
+  <div class="item3">SQL injection attacks are one of the most common web attacks of the past ten years and allow attackers to compromise a server's cookies, web forms, or HTTP posts to manipulate data out of the database
+                  They exploit input fields (like those you'd see in an online form) and inject malicious scripts designed to trick the server into providing unauthorized (and yet not protected) sensitive database information.
+                  Preventing SQL injection attacks requires the same stringency for data input and a limited set of functions permissible through SQL commands.<br><br>
+  <a href="http://=www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself" class=" source">Source:http://www.tripwire.com</a>
+  </div>
+  <!-- 3rd attack -->
+  <div class="item2"> 3.Broken Authentication<br><br><img src="3.Broken Authorization.png" width="240" height=auto><img>
+    <br><br>
+  <a href="https://secinfos.com/understanding-broken-authentication-and-its-implications-for-cybersecurity/" class="source">Source:https://secinfos.com</a>
+  </div>
+  <div class="item3">The Verizon 2022 DBIR states that 67% of data breaches result from compromised credentials.
+    Broken authentication or any sort of illegitimate login based access can be executed in many ways:
+    Brute force
+    Credential stuffing
+    Dictionary attacks
+    and more
+    Preventing broken authentication attacks can be as easy as making a super-secure password or as reliable as switching to tokenized Multi-Factor Authentication (MFA).
+    <br><br>
+  <a href="http://=www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself" class="source">Source:http://www.tripwire.com</a>
+  </div>
+<!-- 4th attack -->
+<div class="item2">4. Drive-By Download<br><br><img src="4. Driven by Download.png" width="240" height=auto><img>
+    <br><br>
+<a href="https://us.norton.com/blog/malware/what-are-drive-by-downloads" class="source">Source:https://us.norton.com/blog</a>
+</div>
+  <div class="item3">Drive-by downloads occur when a user visits a website and a malicious agent downloads onto the victim's computer automatically.
+                  It can happen when the user is downloading something else or upon opening an email, clicking a pop-up window, or merely visiting a page.
+                  Since drive-by attacks take advantage of latent security vulnerabilities in apps, browsers, and operating systems, it's important to keep your environment up to date. 
+                  Limiting the number of web plug-ins and applications you install also reduces your attack surface.
+    <br><br>
+  <a href="http://=www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself" class="source">Source:http://www.tripwire.com</a>
+  </div>
+<!-- 5th attack -->
+  <div class="item2">5. Password-Based Attacks<br><br><img src="5. PS Attack.png" width="240" height=auto><img>
+    <br><br>
+   <a href="https://us.norton.com/blog/emerging-threats/password-attack" class="source">Source:https://us.norton.com/blog</a>
+  </div>
+  <div class="item3">While these can be part of a 'broken authentication' exploit, they really deserve their own real estate. 
+    The list of password-based attacks is varied and wide, including:
+    Credential dumping (stealing your RAM to get to your secrets)
+    Brute force (systematically guessing the correct password)
+    Credential stuffing (using known credentials to log into a series of other accounts)
+    Pass the Hash (PtH) techniques (stealing a hashed credential and using it to create a new authenticated session)
+    <br><br>
+  <a href="http://=www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself" class="source">Source:http://www.tripwire.com</a>
+  </div>
+<!-- 6th attack -->
+ <div class="item2">6. Fuzzing<br><br><img src="6. Fuzzing.png" width="240" height=auto><img>
+    <br><br>
+  <a href="https://www.beyondsecurity.com/resources/guides/fuzzing-in-cybersecurity" class="source">Source:https://www.beyondsecurity.com/</a>
+  </div>
+ <div class="item3">Fuzz testing is a type of web attack that works by initially inputting a large amount of random data (fuzz) into an application to get it to crash. 
+    The next step is using a fuzzer software tool to identify the weak spots. 
+    If there are any loopholes in the target's security, the attacker can further exploit it.
+  <br><br>
+ <a href="http://=www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself" class="source">Source:http://www.tripwire.com</a>
+  </div>
+<!-- 7th attack -->
+ <div class="item2">7. Using Known Vulnerabilities<br><br><img src="7.known .png" width="240" height=auto><img>
+    <br><br>
+    <a href="https://my.f5.com/manage/s/article/K17045144" class="source">Source:https://my.f5.com</a>
+ </div>
+ <div class="item3">Today's software is often a composite of many separate parts and rests at the end of a long software supply chain. 
+                 Hence, a vulnerability or exploit hidden in a downstream dependency or left over from an Open-Source code repository could lead to compromise in the final site.
+                 Many companies are vetting their third-party suppliers for security compliance prior to partnering to avoid this scenario and leaning on code signing, quality control policies, and internal threat detection to prevent (or protect against) vulnerable dependencies that slip through.
+    <br><br>
+ <a href="http://=www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself" class="source">Source:http://www.tripwire.com</a>
+ </div>
+<!-- 8th attack -->
+<div class="item2">8. DDoS (Distributed Denial-of-Service)<br><br><img src="8.DDos.png" width="240" height=auto><img>
+    <br><br>
+    <a href="https://www.geeksforgeeks.org/what-is-ddosdistributed-denial-of-service/" class="source">Source:https://www.geeksforgeeks.org</a>
+</div>
+<div class="item3">DDoS attacks aim to overwhelm the target's web server with requests, making the site unavailable for other visitors. 
+                 A botnet usually creates a vast number of requests, which are distributed among previously infected computers. 
+                 Also, these types of web attacks are often used together with other methods; the goal of the former is to distract the security systems while exploiting a vulnerability.
+    <br><br>
+ <a href="http://=www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself" class="source">Source:http://www.tripwire.com</a>
+ </div>
+<!-- 9th attack -->
+<div class="item2">9. MiTM (Man-in-the-Middle)<br><br><img src="9 Man in Man.png" width="240" height=auto><img>
+    <br><br>
+<a href="https://www.invicti.com/blog/web-security/man-in-the-middle-attack-how-avoid/" class="source">Source:https://www.invicti.com/blog</a>
+</div>
+<div class="item3">Man-in-the-middle attacks are common among sites that haven't encrypted their data as it travels from the user to the servers (sites using HTTP instead of HTTPS). 
+                 The perpetrator intercepts the data as it's being transferred between two parties. 
+                 If the data isn't encrypted, the attacker can easily read personal, login, or other sensitive details that travel between two locations on the Internet.
+<br><br>
+ <a href="http://=www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself" class="source">Source:http://www.tripwire.com</a>
+ </div>
+<!-- 10th attack -->
+<div class="item2">10. Directory Traversal<br><br><img src="10.Directory Retrival .png" width="240" height=auto><img>
+    <br><br>
+    <a href="https://www.linkedin.com/pulse/path-traversal-attack-prevention-aravind-s" class="source"> Source:https://www.linkedin.com/pulse/</a>
+</div>
+ <div class="item3">Directory (or Path) Traversal attacks target the web root folder to access unauthorized files or directories outside the targeted folder. 
+                 The attacker tries to inject movement patterns within the server directory to move up in the hierarchy.
+                 A successful path traversal can compromise:Access to the site,Configuration files,Databases,Other websites and files on the same physical server.
+    <br><br>
+<a href="http://=www.tripwire.com/state-of-security/most-common-website-security-attacks-and-how-to-protect-yourself" class="source">Source:http://www.tripwire.com</a>
+ </div>
+</div>
+<br><br><br><br>
+<!-- Task 4 -->
+<button id="t4cat" class="unSelectedElement" onClick="task4display('cat');">Cat</button>
+<button id="t4dog" class="unSelectedElement" onClick="task4display('dog');">Dog</button>
+<button id="t4frog" class="unSelectedElement" onClick="task4display('frog');">Frog</button>
+<br><br>
+<input id="t4display" class="task4display">
+<br><br>
+<p id="t5display" class="task5display"></p>
+<br>
+<img id="t6display" width="560" height=auto>
+<p class="imagecredit">Image Credit: Pixabay from pexels.com</p>
+</boday>
+</html>
